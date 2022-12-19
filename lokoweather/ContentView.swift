@@ -2,20 +2,16 @@
 //  ContentView.swift
 //  lokoweather
 //
-//  Created by Rodrigues, Luis (EXTERN: EEDS) on 19/12/2022.
+//  Created by Rodrigues, Luis on 19/12/2022.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+			LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing).edgesIgnoringSafeArea(.all)
         }
-        .padding()
     }
 }
 
