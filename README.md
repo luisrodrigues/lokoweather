@@ -1,9 +1,9 @@
-# lokoweather
+# Loko Weather
 Simple weather app to learn SwiftUI
 
 <div>
-  <img src="home_screen.png" alt="Home screenshot" heigth="500"/>
-  <img src="home_screen_dark.png" alt="Home screenshot" height="500"/>
+  <img src="home_screen.png" alt="Home screenshot" width="200"/>
+  <img src="home_screen_dark.png" alt="Home screenshot" width="200"/>
  </div>
  
  ## Todo
