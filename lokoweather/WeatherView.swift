@@ -13,18 +13,18 @@ struct WeatherView: View {
 	
 	var body: some View {
 		ZStack {
-			BackgroundView(isNight: $isNight)
+			BackgroundView(isNight: isNight)
 			VStack {
 				CityTextView(cityName: "Porto")
 				MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 16)
 				HStack(spacing: 20) {
-					WeatherDayView(weatherDays: $weatherDays)
+					WeatherDayView(weatherDays: weatherDays)
 				}
 				Spacer()
 				Button {
 					isNight.toggle()
 				} label: {
-					WeatherButton(buttonText: "Change Day Time", textColor: .blue, backgroundColor: Color.white)
+					WeatherButton(isNight: isNight, buttonText: "Change Day Time", backgroundColor: Color.white)
 				}
 				Spacer()
 			}
@@ -39,7 +39,7 @@ struct WeatherView_Previews: PreviewProvider {
 }
 
 struct WeatherDayView: View {
-	@Binding var weatherDays: [WeatherDay]
+	var weatherDays: [WeatherDay]
 	
 	var body: some View {
 		ForEach(weatherDays) { day in
@@ -48,7 +48,7 @@ struct WeatherDayView: View {
 					.font(.system(size: 16, weight: .medium, design: .default))
 					.foregroundColor(.white)
 				Image(systemName: day.imageName)
-					.renderingMode(.original)
+					.symbolRenderingMode(.multicolor)
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 40, height: 40)
@@ -63,18 +63,12 @@ struct WeatherDayView: View {
 }
 
 struct BackgroundView: View {
-	@Binding var isNight: Bool
+	var isNight: Bool
 	
 	var body: some View {
-		LinearGradient(
-			gradient: Gradient(colors: [
-				isNight ? .black : .blue,
-				isNight ? .gray : Color("lightBlue")
-			]),
-			startPoint: .topTrailing,
-			endPoint: .bottomTrailing
-		)
-		.edgesIgnoringSafeArea(.all)
+		ContainerRelativeShape()
+			.fill(isNight ? Color.black.gradient : Color.blue.gradient)
+			.ignoresSafeArea()
 	}
 }
 
