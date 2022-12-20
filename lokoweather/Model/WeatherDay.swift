@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct WeatherDay: Identifiable {
-	let id: UUID
+struct WeatherDay: Hashable {
 	var dayOfWeek: String
 	var imageName: String
 	var temperature: Int
 	
-	init(id: UUID = UUID(), dayOfWeek: String, imageName: String, temperature: Int) {
-		self.id = id
+	init(dayOfWeek: String, imageName: String, temperature: Int) {
 		self.dayOfWeek = dayOfWeek
 		self.imageName = imageName
 		self.temperature = temperature
