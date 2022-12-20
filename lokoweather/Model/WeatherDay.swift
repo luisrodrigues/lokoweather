@@ -7,16 +7,11 @@
 
 import Foundation
 
-struct WeatherDay: Hashable {
-	var dayOfWeek: String
-	var imageName: String
-	var temperature: Int
-	
-	init(dayOfWeek: String, imageName: String, temperature: Int) {
-		self.dayOfWeek = dayOfWeek
-		self.imageName = imageName
-		self.temperature = temperature
-	}
+struct WeatherDay: Hashable, Identifiable {
+	let id = UUID()
+	let dayOfWeek: String
+	let imageName: String
+	let temperature: Int
 }
 
 enum EnumDays : String
