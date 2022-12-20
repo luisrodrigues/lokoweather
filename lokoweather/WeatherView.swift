@@ -41,7 +41,7 @@ struct WeatherDayView: View {
 	var weatherDays: [WeatherDay]
 	
 	var body: some View {
-		ForEach(weatherDays, id: \.id) { day in
+		ForEach(weatherDays) { day in
 			VStack {
 				Text(day.dayOfWeek)
 					.font(.system(size: 16, weight: .medium, design: .default))
