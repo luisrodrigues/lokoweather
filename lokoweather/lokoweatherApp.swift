@@ -11,7 +11,7 @@ import SwiftUI
 struct lokoweatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			WeatherView(weatherDays: WeatherDay.sampleData)
         }
     }
 }
