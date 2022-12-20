@@ -1,4 +1,7 @@
 # lokoweather
 Simple weather app to learn SwiftUI
 
-<img src="home_screen.png" alt="Home screenshot" width="250"/>
+<div>
+  <img src="home_screen.png" alt="Home screenshot" width="250"/>
+  <img src="home_screen_dark.png" alt="Home screenshot" width="250"/>
+ </div>
