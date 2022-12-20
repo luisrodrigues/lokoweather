@@ -20,13 +20,12 @@ struct WeatherView: View {
 				HStack(spacing: 20) {
 					WeatherDayView(weatherDays: weatherDays)
 				}
-				Spacer()
+				.padding(.bottom, 40)
 				Button {
 					isNight.toggle()
 				} label: {
 					WeatherButton(isNight: isNight, buttonText: "Change Day Time", backgroundColor: Color.white)
 				}
-				Spacer()
 			}
 		}
 	}
